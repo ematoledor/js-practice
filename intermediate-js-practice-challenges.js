@@ -5,7 +5,7 @@
 // Write your code here
 let reverseArray = (arr) => {
 
-  for (let i - 0, arr.length - 1, i++)
+  for (let i - 0, arr.length - 1, i++);
 
 }
 

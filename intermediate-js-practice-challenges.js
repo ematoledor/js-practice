@@ -224,6 +224,7 @@ console.log(justCoolStuff(myStuff, coolStuff))
 const isTheDinnerVegan = arr => arr.every(food => food.source === 'plant');
 
 ///alternate
+
 function isTheDinnerVegan(arr) {
   const isVegan = (food) => {
         if (food.source === 'plant') {
@@ -244,3 +245,111 @@ const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'd
 console.log(isTheDinnerVegan(dinner))
 
 /////////////////////////
+
+const speciesArray = [ {speciesName:'shark', numTeeth:50}, {speciesName:'dog', numTeeth:42}, {speciesName:'alligator', numTeeth:80}, {speciesName:'human', numTeeth:32}];
+
+const sortSpeciesByTeeth = arr => arr.sort((speciesObj1, speciesObj2) => speciesObj1.numTeeth > speciesObj2.numTeeth)
+
+// As a function declaration AND using a named function:
+function sortSpeciesByTeeth(arr) {
+      const compareTeeth = (speciesObj1, speciesObj2) => speciesObj1.numTeeth > speciesObj2.numTeeth
+      return arr.sort(compareTeeth)
+}
+
+console.log(sortSpeciesByTeeth(speciesArray))
+
+////////////////////////////////////////////////////////
+
+const findMyKeys = arr => arr.findIndex(item => item === 'keys')
+
+/*
+// Alternate solution:
+// As a function declaration using a loop:
+function findMyKeys(arr) {
+      let index = -1;
+      for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 'keys') {
+                  index = i
+                  break
+            }
+      }
+      return index
+}
+*/
+const randomStuff = ['credit card', 'screwdriver', 'receipt', 'gum', 'keys', 'used gum', 'plastic spoon'];
+
+console.log(findMyKeys(randomStuff))  
+
+//////////////////////////////////////////
+
+// Final solution:
+const dogFactory = (name, breed, weight) => {
+  return {
+      _name: name,
+      _breed: breed,
+      _weight: weight,
+      get name() {
+          return this._name;
+      },
+      set name(newName) {
+          this._name = newName;
+      },
+      get breed() {
+          return this._breed;
+      },
+      set breed(newBreed) {
+          this._breed = newBreed;
+      },
+      get weight() {
+          return this._weight;
+      },
+      set weight(newWeight) {
+          this._weight = newWeight;
+      },
+      bark() {
+          return 'ruff! ruff!'
+      },
+      eatTooManyTreats() {
+          this._weight++
+      }
+  }
+}
+
+/*
+// Solution to checkpoint 1:
+const dogFactory = (name, breed, weight) => {
+    return {
+          name: name,
+          breed: breed,
+          weight: weight
+    }
+}
+
+// Solution to checkpoint 2:
+const dogFactory = (name, breed, weight) => {
+    return {
+          _name: name,
+          _breed: breed,
+          _weight: weight,
+          get name() {
+                return this._name;
+          },
+          set name(newName) {
+                this._name = newName;
+          },
+          get breed() {
+                return this._breed;
+          },
+          set breed(newBreed) {
+                this._breed = newBreed;
+          },
+          get weight() {
+                return this._weight;
+          },
+          set weight(newWeight) {
+                this._weight = newWeight;
+          }
+    }
+}
+
+*/

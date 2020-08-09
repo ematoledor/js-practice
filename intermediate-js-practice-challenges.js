@@ -200,7 +200,7 @@ console.log(sortYears(years))
 // Write a function justCoolStuff() that takes in two arrays of strings, and, using the built-in .filter() method, returns an array with the items that are present in both arrays.
 
 const justCoolStuff = (firstArray, secondArray) => firstArray.filter(item => secondArray.includes(item))
-
+  
 function justCoolStuff(firstArray, secondArray) {
       function isInSecondArray(item){
             for(let i = 0; i<secondArray.length; i++){

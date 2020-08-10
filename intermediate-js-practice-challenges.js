@@ -315,7 +315,7 @@ const dogFactory = (name, breed, weight) => {
   }
 }
 
-/*
+
 // Solution to checkpoint 1:
 const dogFactory = (name, breed, weight) => {
     return {
@@ -351,5 +351,4 @@ const dogFactory = (name, breed, weight) => {
           }
     }
 }
-
-*/
+ 
